@@ -1,0 +1,103 @@
+[user]
+	name = Kazumi COND
+	email = kzmcond+git@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+	interactive = auto
+	ui = auto
+#	ui = always
+[core]
+	excludesfile = /home/kzmcond/.gitignore_global
+#	attributesfile = /home/kzmcond/.gitattributes_global
+#	editor = nvim
+	editor = code --wait
+  editor = /home/kzmcond/local/bin/nvim
+#	pager = lv -c
+	pager = delta
+#  pager = delta --theme='Monokai Extended'
+	autoCRLF = false
+#	true|warn|false default:true
+	safecrlf = true
+	quotepath = false
+#	pager  = cat
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+[delta]
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  syntax-theme = "Monokai Extended"
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+  light = false
+[interactive]
+  diffFilter = delta --color-only
+[alias]
+	st = status
+	co = checkout
+	ci = commit -v
+	com = commit
+	br = branch
+	sw = switch
+	res = restore
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  B
+	type = cat-file -t
+	dump = cat-file -p
+	di = diff --color-words
+	ds = diff --staged
+	dc = diff --cached
+	dh = diff HEAD
+	dhs= diff HEAD --stat
+	pl = '!git pull && git submodule update --init'
+	loga = log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(black bold)%an, %ar%Creset'
+	logg = log --graph --oneline
+	logp = log -p
+	logs = log --stat
+	confl = config --list
+	graph = log --graph --decorate --oneline
+#	git config --global alias.graph 'log --graph --decorate --oneline'
+#	git config --blobal --unset alias.graph
+	push-f = "push --force-with-lease"
+	pf = "push --force-with-lease"
+#git config --global alias.push-f "push --force-with-lease"
+  rl = reflog  
+[push]
+	default = current
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+
+# %d :参照名
+# %d : 参照名(ブランチやタグ、リモートブランチ)
+# %an : コミッターの名前
+# %ar : コミットの相対的な日付
+# %C : %Cred / %Cgreen / %Cblue以外はcolor.branch.*と同じフォーマットの%C(…)を使う
+
+[credential]
+	helper = cache --timeout=3600
+#[http]
+#	sslverify = false # 認証機関に署名されていないSSL証明書を利用する場合、SSLで利用する証明書による検証を無効にする
+[help]
+	autocorrect = 1
+[github]
+  user = kzmcond
+[ghq]
+  root = ~/Desktop/vite
+  root = ~/Desktop/projects
+  root = ~/go/src
+  root = ~/code
+  root = ~/local/src
+  root = ~/projects
+[init]
+	defaultBranch = main
+[diff]
+#   algorithm = histogram
+#   colorMoved = dimmed-zebra
+  colorMoved = default
