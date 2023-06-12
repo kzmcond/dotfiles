@@ -1,6 +1,7 @@
 alias where='command -v'
 
 alias vi='/usr/bin/vim'
+alias nvim='/usr/local/bin/nvim'
 #alias nvi='/usr/bin/nvim'
 alias nvi='$HOME/local/bin/nvim'
 alias nv='$HOME/local/bin/nvim -u $HOME/.config/nvim/my-init.vim'
@@ -450,11 +451,19 @@ alias csa='npx degit sveltejs/template '
 # Rust
 alias cr='cargo run'
 alias cb='cargo build'
-alias cat='$HOME/.cargo/bin/bat'
-alias ls='$HOME/.cargo/bin/exa'
-#alias find='$HOME/.cargo/bin/fd'
-alias llrt='$HOME/.cargo/bin/exa -lsnew'
-alias llrta='$HOME/.cargo/bin/exa -lasnew'
+if [[ $(command -v bat) ]]; then
+  alias cat='$HOME/.cargo/bin/bat'
+fi
+if [[ $(command -v fd) ]]; then
+  alias find='$HOME/.cargo/bin/fd'
+fi
+if [[ $(command -v exa) ]]; then
+  alias ls='$HOME/.cargo/bin/exa --icons --git'
+  alias ll='$HOME/.cargo/bin/exa --icons --git -lsnew'
+  alias la='$HOME/.cargo/bin/exa --icons --git -a'
+  alias lla='$HOME/.cargo/bin/exa --icons --git -lasnew'
+  alias lt='$HOME/.cargo/bin/exa --icons --git -T -L 3 -a -I "node_modules|.git|.cache"'
+fi
 
 # ide (tmux)
 alias ide='$HOME/local/bin/ide.sh'
