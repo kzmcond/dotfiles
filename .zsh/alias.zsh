@@ -413,16 +413,18 @@ alias upd="$HOME/local/bin/update.sh"
 alias b="brew"
 
 # Python
-alias python="$HOME/local/python/bin/python"
-alias pip="$HOME/local/python/bin/pip"
-alias idle="$HOME/local/python/bin/idle"
-alias pydoc="$HOME/local/python/bin/pydoc"
+#alias python="$HOME/local/python/bin/python"
+#alias pip="$HOME/local/python/bin/pip"
+#alias idle="$HOME/local/python/bin/idle"
+#alias pydoc="$HOME/local/python/bin/pydoc"
+alias python="/usr/bin/python3"
 
 # Node.js
 alias v='volta'
 alias n='npm'
 alias p='pnpm'
 alias px='pnpx'
+alias pdx='pnpm dlx'
 alias nr='npm run'
 alias nrs='npm run --silent'
 #alias tree_npm='tree -L 3 -I ".git|node_modules" -a'

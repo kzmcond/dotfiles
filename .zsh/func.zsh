@@ -277,7 +277,8 @@ function ghq-peco {
 #  zle -R -c
 }
 zle -N ghq-peco
-bindkey '^[' ghq-peco
+#bindkey '^[' ghq-peco
+bindkey '^h' ghq-peco
 # }}}
 
 # {{{ Todoist + Toggl
