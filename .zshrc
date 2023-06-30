@@ -18,7 +18,7 @@ export PATH="$HOME/local/bin:$PATH"
 #[ -f ~/.zsh/p10k.zsh ] && source ~/.zsh/p10k.zsh
 [ -f ~/.zsh/starship.zsh ] && source ~/.zsh/starship.zsh
 [ -f ~/.zsh/volta.zsh ] && source ~/.zsh/volta.zsh
-[ -f ~/.zsh/asdf.zsh ] && source ~/.zsh/asdf.zsh
+#[ -f ~/.zsh/asdf.zsh ] && source ~/.zsh/asdf.zsh
 [ -f ~/.zsh/zoxide.zsh ] && source ~/.zsh/zoxide.zsh
 #[ -f ~/.zsh/powerline-go.zsh ] && source ~/.zsh/powerline-go.zsh
 #[ -f ~/.zsh/prompt.zsh ] && source ~/.zsh/prompt.zsh
@@ -83,8 +83,8 @@ setopt complete_aliases  # aliased ls needs if file/dir completions work
 ######################################################################
 # autoloadされる関数を検索するパス
 #fpath=(${HOME}/.zsh/functions/Completion ${HOME}/.zfunc ${fpath})
-#fpath=(~/.zsh/completion $fpath)
-fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
+# ~/.zsh/plugins.zshに追記
+#fpath=(~/.zsh/plugins/zsh-completions/src $fpath)
 ######################################################################
 
 ######################################################################
@@ -177,8 +177,8 @@ bindkey ";5D" backward-word
 # -u : 安全でないファイル／ディレクトリを使用
 # -i : 安全でないファイル／ディレクトリを無視
 # -c : セキュリティチェックをスキップ
-#autoload -Uz compinit && compinit
-autoload -Uz compinit && compinit -c
+autoload -Uz compinit && compinit
+#autoload -Uz compinit && compinit -c
 
 zstyle ':completion::complete:*' use-cache true
 # 補完候補の一覧表示時、Tabや矢印で選択可能にする
@@ -338,11 +338,14 @@ export PATH="$PNPM_HOME:$PATH"
 export BUN_INSTALL="/home/kzmcond/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# rtx (asdf rust clone)
+eval "$(~/.cargo/bin/rtx activate zsh)"
+
 # asdf
 # append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+#fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
-autoload -Uz compinit && compinit
+#autoload -Uz compinit && compinit
 
 ###########
 # zcompile
